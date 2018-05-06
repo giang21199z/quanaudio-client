@@ -1,0 +1,26 @@
+<div class="panel-group category-products" id="accordian">
+    <!--category-productsr-->
+    <ng-container *ngFor="let category of listCategories">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordian" href="#category-{{category.id}}">
+                        <span *ngIf="category.listChild.length" class="badge pull-right"><i class="fa fa-plus"></i></span> {{category.name}}
+                    </a>
+                </h4>
+            </div>
+            <ng-container *ngIf="category.listChild.length">
+                <div id="category-{{category.id}}" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <ul>
+                            <ng-container *ngFor="let child of category.listChild">
+                                <li><a (click)="filterCategory(child.id)">{{child.name}} </a></li>
+                            </ng-container>
+                        </ul>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </ng-container>
+</div>
+<!--/category-products-->

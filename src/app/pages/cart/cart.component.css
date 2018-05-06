@@ -1,0 +1,8 @@
+.cart_quantity_up,
+.cart_quantity_down {
+    cursor: pointer;
+}
+
+.btn.btn-fefault.cart {
+    margin-left: 0px;
+}

@@ -1,0 +1,29 @@
+<div class="register-req">
+    <p>Vui lòng điền đầy đủ thông tin. Chúng tôi sẽ sớm liên lạc với bạn</p>
+</div>
+<!--/register-req-->
+
+<div class="shopper-informations">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="shopper-info">
+                <p>Thông tin của khách hàng</p>
+                <form>
+                    <input type="text" name="fullname" id="fullname" placeholder="Họ tên (*)" [(ngModel)]="user.fullname">
+                    <input type="text" name="phone" placeholder="Số điện thoại (*)" [(ngModel)]="user.phone">
+                    <input type="email" name="email" placeholder="Email nếu có" [(ngModel)]="user.email">
+                    <input type="text" name="address" placeholder="Địa chỉ nhận hàng (*)" [(ngModel)]="user.address">
+                </form>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="order-message">
+                <p>Yêu cầu khác</p>
+                <textarea name="message" name="address" placeholder="Vui lòng nhập yêu cầu khác nếu có" rows="8" [(ngModel)]="user.message"></textarea>
+            </div>
+        </div>
+        <div class="col-sm-4 col-sm-offset-4">
+            <button class="btn btn-primary btn-confirm" (click)="getUserInfor()">Đồng ý</button>
+        </div>
+    </div>
+</div>

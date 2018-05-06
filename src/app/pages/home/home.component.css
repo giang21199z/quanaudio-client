@@ -1,0 +1,4 @@
+.single-products:hover .product-overlay {
+    display: block;
+    height: 50%;
+}
