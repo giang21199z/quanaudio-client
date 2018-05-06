@@ -5,7 +5,7 @@
             <div class="col-sm-3">
                 <div class="left-sidebar">
                     <h2>Danh mục</h2>
-                    <app-category (categoryChange)="categoryChange($event)"></app-category>
+                    <app-category (categoryChange)="categoryListener($event)"></app-category>
 
                     <!--brands_products
                     <div class="brands_products">
@@ -65,7 +65,7 @@
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                     <div class="productinfo text-center">
-                                        <img src="assets/images/home/product1.jpg" alt="{{audio.name}}" />
+                                        <img src="assets/images/audio/{{audio.image}}" alt="{{audio.name}}" />
                                         <h2>{{audio.price | pricePipe: audio.price}} VNĐ</h2>
                                         <p>{{audio.name}}</p>
                                         <a class="btn btn-default add-to-cart" [routerLink]="['detail-page', audio.idaudio, audio.name| urlPipe: audio.name]"><i class="fa fa-hand-o-right"></i>Xem ngay</a>
@@ -383,104 +383,7 @@
                 -->
                 <!--/category-tab-->
 
-                <div class="recommended_items">
-                    <!--recommended_items-->
-                    <h2 class="title text-center">Sản phẩm hot</h2>
-
-                    <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                <div class="col-sm-4">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="assets/images/home/recommend1.jpg" alt="" />
-                                                <h2>999.999 VNĐ</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <a [routerLink]="['cart']" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Mua ngay</a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="assets/images/home/recommend2.jpg" alt="" />
-                                                <h2>999.999 VNĐ</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <a [routerLink]="['cart']" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Mua ngay</a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="assets/images/home/recommend3.jpg" alt="" />
-                                                <h2>999.999 VNĐ</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <a [routerLink]="['cart']" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Mua ngay</a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="col-sm-4">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="assets/images/home/recommend1.jpg" alt="" />
-                                                <h2>999.999 VNĐ</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <a [routerLink]="['cart']" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Mua ngay</a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="assets/images/home/recommend2.jpg" alt="" />
-                                                <h2>999.999 VNĐ</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <a [routerLink]="['cart']" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Mua ngay</a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="assets/images/home/recommend3.jpg" alt="" />
-                                                <h2>999.999 VNĐ</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <a [routerLink]="['cart']" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Mua ngay</a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
-                            <i class="fa fa-angle-left"></i>
-                        </a>
-                        <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
-                            <i class="fa fa-angle-right"></i>
-                        </a>
-                    </div>
-                </div>
-                <!--/recommended_items-->
+                <app-recommen-product></app-recommen-product>
 
             </div>
         </div>

@@ -54,13 +54,17 @@ constructor(private http:HttpClient) { }
             const condition = item.condition;
             const brand = item.brand;
             const image = item.image;
+            const image2 = data.image2;
+            const image3 = data.image3;
+            const image4 = data.image4;
             const updated = item.updated.date;
             const type = new Type({idtype: item.idtype, name: ''});
             const audio = new Audio(
                 {
                     id: idaudio,name: name, price: price,
                     condition: condition, brand: brand,
-                    image: image, updated: updated, type: type
+                    image: image, image2: image2, image3: image3, image4: image4,
+                    updated: updated, type: type
                 }
             );
             cartItem.push(new CartItem({audio: audio, amount: 1}));
@@ -84,13 +88,17 @@ constructor(private http:HttpClient) { }
         const condition = data.condition;
         const brand = data.brand;
         const image = data.image;
+        const image2 = data.image2;
+        const image3 = data.image3;
+        const image4 = data.image4;
         const updated = data.updated.date;
         const type = new Type({idtype: data.idtype, name: ''});
         const audio = new Audio(
             {
                 id: idaudio,name: name, price: price,
                 condition: condition, brand: brand,
-                image: image, updated: updated, type: type
+                image: image, image2: image2, image3: image3, image4: image4,
+                updated: updated, type: type
             }
         );
         return audio;

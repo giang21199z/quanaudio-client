@@ -49,7 +49,11 @@ export class HomeComponent implements OnInit {
             console.log(error);
         });
     }
-    categoryChange(evt){
-        console.log(evt);
+    categoryListener(evt){
+        this.audioService.getAudiosByType(evt, data => {
+            this.audios = data;
+        }, error => {
+            console.log(error);
+        })
     }
 }
