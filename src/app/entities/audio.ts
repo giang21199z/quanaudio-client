@@ -5,6 +5,7 @@ export class Audio {
     private price: number;
     private condition: string;
     private brand: string;
+    private description: string;
     private image: string;
     private image2: string;
     private image3: string;
@@ -16,7 +17,7 @@ export class Audio {
         return this.price;
     }
 
-    public constructor({id, name, price, condition, brand, image, image2, image3, image4, updated, type}){
+    public constructor({id, name, price, condition, brand, image, image2, image3, image4, updated, type, description}){
         this.id = id;
         this.name = name;
         this.price = price;
@@ -28,6 +29,7 @@ export class Audio {
         this.image4 = image4;
         this.updated = updated;
         this.type = type;
+        this.description = description;
     }
 
     public getId(){

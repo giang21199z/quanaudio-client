@@ -36,38 +36,11 @@
                     <div class="logo pull-left">
                         <a href="#"><img src="assets/images/home/logo.png" alt="" /></a>
                     </div>
-                    <!-- <div class="btn-group pull-right">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-                                    USA
-                                    <span class="caret"></span>
-                                </button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Canada</a></li>
-                                <li><a href="#">UK</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-                                    DOLLAR
-                                    <span class="caret"></span>
-                                </button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Canadian Dollar</a></li>
-                                <li><a href="#">Pound</a></li>
-                            </ul>
-                        </div>
-                    </div> -->
                 </div>
                 <div class="col-sm-8">
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
-                            <!-- <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
-                            <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
-                            <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li> -->
                             <li><a [routerLink]="['/cart']"><i class="fa fa-shopping-cart"></i> Giỏ hàng <span style="color: red">{{numberOfItemCart != 0 ?  numberOfItemCart: ''}}</span></a></li>
-                            <!-- <li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li> -->
                         </ul>
                     </div>
                 </div>
@@ -91,8 +64,8 @@
                     </div>
                     <div class="mainmenu pull-left">
                         <ul class="nav navbar-nav collapse navbar-collapse">
-                            <li><a [routerLink]="['/']" class="active">Trang chủ</a></li>
-                            <li class="dropdown"><a href="#">Danh mục sản phẩm<i class="fa fa-angle-down"></i></a>
+                            <li><a [routerLink]="['/']" [routerLinkActive]="['active']">Trang chủ</a></li>
+                            <li class="dropdown" [routerLinkActive]="['active']"><a>Danh mục sản phẩm<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
                                     <li><a href="shop.html">Micro</a></li>
                                     <li><a href="product-details.html">Phụ kiện</a></li>
@@ -101,11 +74,11 @@
                                     <li><a href="login.html">Aplifier</a></li>
                                 </ul>
                             </li>
-                            <li class="dropdown"><a [routerLink]="['/news']">Tin tức</a>
+                            <li class="dropdown"><a [routerLink]="['/news']" [routerLinkActive]="['active']">Tin tức</a>
                             </li>
                             <li class="dropdown"><a href="#">Công trình hoàn thành</a>
                             </li>
-                            <li><a [routerLink]="['/contact']">Liên hệ</a></li>
+                            <li><a [routerLink]="['/contact']" [routerLinkActive]="['active']">Liên hệ</a></li>
                         </ul>
                     </div>
                 </div>

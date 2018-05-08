@@ -53,6 +53,7 @@ constructor(private http:HttpClient) { }
             const price = +item.price;
             const condition = item.condition;
             const brand = item.brand;
+            const description = item.description;
             const image = item.image;
             const image2 = data.image2;
             const image3 = data.image3;
@@ -64,7 +65,7 @@ constructor(private http:HttpClient) { }
                     id: idaudio,name: name, price: price,
                     condition: condition, brand: brand,
                     image: image, image2: image2, image3: image3, image4: image4,
-                    updated: updated, type: type
+                    updated: updated, type: type, description: description
                 }
             );
             cartItem.push(new CartItem({audio: audio, amount: 1}));
@@ -87,6 +88,7 @@ constructor(private http:HttpClient) { }
         const price = +data.price;
         const condition = data.condition;
         const brand = data.brand;
+        const description = data.description;
         const image = data.image;
         const image2 = data.image2;
         const image3 = data.image3;
@@ -98,7 +100,7 @@ constructor(private http:HttpClient) { }
                 id: idaudio,name: name, price: price,
                 condition: condition, brand: brand,
                 image: image, image2: image2, image3: image3, image4: image4,
-                updated: updated, type: type
+                updated: updated, type: type, description: description
             }
         );
         return audio;

@@ -31,13 +31,15 @@ import { RecommenProductComponent } from './pages/recommen-product/recommen-prod
 import { UserInforComponent } from './pages/user-infor/user-infor.component';
 import { LoaderComponent } from './common/loader/loader.component';
 import { PendingOrderComponent } from './pages/pending-order/pending-order.component';
+import { NewsService } from './services/news.service';
+import { PaginationComponent } from './common/pagination/pagination.component';
 const appRoutes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'detail-page/:id/:name', component: DetailProductsComponent},
     { path: 'cart', component: CartComponent},
     { path: 'contact', component: ContactComponent},
     { path: 'news', component: NewsComponent},
-    { path: 'detail-news', component: DetailNewsComponent},
+    { path: 'detail-news/:id/:title', component: DetailNewsComponent},
     { path: 'pending-order', component: PendingOrderComponent}
 ];
 
@@ -58,7 +60,8 @@ const appRoutes: Routes = [
         RecommenProductComponent,
         UserInforComponent,
         LoaderComponent,
-        PendingOrderComponent
+        PendingOrderComponent,
+        PaginationComponent
     ],
     imports: [
         BrowserModule,
@@ -73,7 +76,7 @@ const appRoutes: Routes = [
     providers: [
         Location, {provide: LocationStrategy, useClass: HashLocationStrategy},
         CategoryService, SlideService, AppService, AudioService, CheckoutService,
-        LoaderService
+        LoaderService, NewsService
     ],
     bootstrap: [AppComponent]
 })
