@@ -15,6 +15,7 @@ constructor(private http:HttpClient) { }
     getLatestNews(requestParams, successCb, errorCb){
         let param = new HttpParams();
         param = param.append('pageNum', requestParams.pageNum);
+        param = param.append('category', requestParams.category);
         this.http.get(APP_CONSTANTS.URL_GET_LATEST_NEWS, {
             params: param
         })

@@ -1,12 +1,12 @@
 import { CartItem } from "./cart-item";
 
 export class User {
-    private fullname: string;
-    private phone: string;
-    private email: string;
-    private address: string;
-    private message: string;
-    private cart: [CartItem];
+    fullname: string;
+    phone: string;
+    email: string;
+    address: string;
+    message: string;
+    cart: [CartItem];
 
     public constructor(
         {

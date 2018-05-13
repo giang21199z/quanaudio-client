@@ -14,7 +14,7 @@
                     <div class="panel-body">
                         <ul>
                             <ng-container *ngFor="let child of category.listChild">
-                                <li><a (click)="filterCategory(child.id)" class="cursor-pointer">{{child.name}} </a></li>
+                                <li><a [routerLink]="['/danh-sach-san-pham', child.id, child.name| urlPipe: child.name]" (click)="filterCategory(child.id)" class="cursor-pointer">{{child.name}} </a></li>
                             </ng-container>
                         </ul>
                     </div>

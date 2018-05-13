@@ -1,6 +1,6 @@
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import {SnackbarModule} from 'ngx-snackbar';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -33,16 +33,20 @@ import { LoaderComponent } from './common/loader/loader.component';
 import { PendingOrderComponent } from './pages/pending-order/pending-order.component';
 import { NewsService } from './services/news.service';
 import { PaginationComponent } from './common/pagination/pagination.component';
+import { ProductsComponent } from './pages/products/products.component';
+
 const appRoutes: Routes = [
-    { path: '', component: HomeComponent },
+    { path: '', redirectTo: '/trang-chu', pathMatch: 'full'},
+    { path: 'trang-chu', component: HomeComponent },
     { path: 'detail-page/:id/:name', component: DetailProductsComponent},
     { path: 'cart', component: CartComponent},
     { path: 'contact', component: ContactComponent},
-    { path: 'news', component: NewsComponent},
+    { path: 'tin-tuc', component: NewsComponent},
+    { path: 'cong-trinh-hoan-thanh', component: NewsComponent},
     { path: 'detail-news/:id/:title', component: DetailNewsComponent},
-    { path: 'pending-order', component: PendingOrderComponent}
+    { path: 'pending-order', component: PendingOrderComponent},
+    { path: 'danh-sach-san-pham/:type/:title', component: ProductsComponent},
 ];
-
 @NgModule({
     declarations: [
         AppComponent,
@@ -61,14 +65,12 @@ const appRoutes: Routes = [
         UserInforComponent,
         LoaderComponent,
         PendingOrderComponent,
-        PaginationComponent
+        PaginationComponent,
+        ProductsComponent
     ],
     imports: [
         BrowserModule,
-        RouterModule.forRoot(
-            appRoutes,
-            { enableTracing: true }
-        ),
+        RouterModule.forRoot(appRoutes),
         HttpClientModule,
         SnackbarModule.forRoot(),
         FormsModule

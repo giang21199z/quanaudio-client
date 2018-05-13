@@ -72,7 +72,7 @@
 
                     <ng-container *ngIf="newsRandom">
                         <div class="media commnets">
-                            <a class="pull-left" href="#">
+                            <a class="pull-left" [routerLink]="['/detail-news', newsRandom.idnews, newsRandom.title| urlPipe: newsRandom.title]">
                                 <img class="media-object" src="assets/images/news/{{newsRandom.image}}" alt="">
                             </a>
                             <div class="media-body">
@@ -85,7 +85,7 @@
                                         <li><a href=""><i class="fa fa-dribbble"></i></a></li>
                                         <li><a href=""><i class="fa fa-google-plus"></i></a></li>
                                     </ul>
-                                    <a class="btn btn-primary" [routerLink]="['/news']">Tin tức khác</a>
+                                    <a class="btn btn-primary" [routerLink]="['/tin-tuc']">Tin tức khác</a>
                                 </div>
                             </div>
                         </div>

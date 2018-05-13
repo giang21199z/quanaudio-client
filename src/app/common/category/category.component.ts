@@ -13,7 +13,6 @@ export class CategoryComponent implements OnInit {
     ngOnInit() {
         this.categoryService.getAllCategory(data => {
             this.listCategories = data;
-            console.log(this.listCategories);
         }, error => {
             console.log(error);
         })    

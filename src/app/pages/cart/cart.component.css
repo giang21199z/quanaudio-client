@@ -6,3 +6,7 @@
 .btn.btn-fefault.cart {
     margin-left: 0px;
 }
+
+.cart_product a img {
+    width: 50%;
+}

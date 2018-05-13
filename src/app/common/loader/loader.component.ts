@@ -9,7 +9,7 @@ import { LoaderService } from './loader.service';
 export class LoaderComponent {
 
     available: boolean;
-    constructor(private loaderService: LoaderService) {
+    constructor(public loaderService: LoaderService) {
         this.available = loaderService.available;
     }
 }
