@@ -13,7 +13,9 @@ export class SlideService {
    * get category
    */
   getAllSlide(successCb, errorCb){
-    this.http.get(APP_CONSTANTS.URL_GET_SLIDE)
+    let header = new HttpHeaders();
+    header.set('Content-Type', 'application/json; charset=utf-8');
+    this.http.get(APP_CONSTANTS.URL_GET_SLIDE, { headers: header })
       .subscribe(data => {
         successCb(this.mappingData(data))
       }, error => errorCb);

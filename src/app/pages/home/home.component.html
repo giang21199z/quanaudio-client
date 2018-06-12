@@ -68,7 +68,7 @@
                                         <img src="assets/images/audio/{{audio.image}}" alt="{{audio.name}}" />
                                         <h2>{{audio.price | pricePipe: audio.price}} VNĐ</h2>
                                         <p>{{audio.name}}</p>
-                                        <a class="btn btn-default add-to-cart" [routerLink]="['detail-page', audio.idaudio, audio.name| urlPipe: audio.name]"><i class="fa fa-hand-o-right"></i>Xem ngay</a>
+                                        <a class="btn btn-default add-to-cart" [routerLink]="['/detail-page', audio.idaudio, audio.name| urlPipe: audio.name]"><i class="fa fa-hand-o-right"></i>Xem ngay</a>
                                     </div>
                                     <div class="product-overlay">
                                         <div class="overlay-content">
