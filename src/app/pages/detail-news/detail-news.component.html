@@ -8,6 +8,12 @@
                             <!--shipping-->
                             <img src="assets/images/home/shipping.jpg" alt="" />
                         </div>
+                        <div class="shipping text-center">
+                            <app-fb-page></app-fb-page>
+                        </div>
+                        <div class="shipping text-center">
+                            <iframe width="100%" height="auto" src="https://www.youtube.com/embed/JrdausxaitA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
                         <!--/shipping-->
                     </div>
                 </div>
@@ -31,7 +37,7 @@
 								</span>
                             </div>
                             <a href="">
-                                <img src="assets/images/news/{{news.image}}" alt="">
+                                <img src="{{news.image}}" alt="">
                             </a>
                             <div [innerHTML]="news.content"></div>
                             <!-- <div class="pager-area">
@@ -73,7 +79,7 @@
                     <ng-container *ngIf="newsRandom">
                         <div class="media commnets">
                             <a class="pull-left" [routerLink]="['/detail-news', newsRandom.idnews, newsRandom.title| urlPipe: newsRandom.title]">
-                                <img class="media-object" src="assets/images/news/{{newsRandom.image}}" alt="">
+                                <img class="media-object" src="{{newsRandom.image}}" alt="">
                             </a>
                             <div class="media-body">
                                 <h4 class="media-heading">{{newsRandom.title}}</h4>

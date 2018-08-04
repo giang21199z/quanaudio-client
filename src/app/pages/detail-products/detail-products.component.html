@@ -10,6 +10,12 @@
                         <!--shipping-->
                         <img src="assets/images/home/shipping.jpg" alt="" />
                     </div>
+                    <div class="shipping text-center">
+                        <app-fb-page></app-fb-page>
+                    </div>
+                    <div class="shipping text-center">
+                        <iframe width="auto" height="auto" src="https://www.youtube.com/embed/JrdausxaitA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
                     <!--/shipping-->
                 </div>
             </div>
@@ -20,29 +26,20 @@
                         <!--product-details-->
                         <div class="col-sm-5">
                             <div class="view-product">
-                                <img #detailAudio src="assets/images/audio/{{audio.image}}" alt="quanaudio.vn" />
+                                <img #detailAudio src="{{audio.image[activeImage]}}" alt="quanaudio.vn" />
                                 <h3 (click)="addCart(audio.id)" class="cursor-pointer"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ hàng</h3>
                             </div>
                             <div id="similar-product" class="carousel slide" data-ride="carousel">
 
                                 <!-- Wrapper for slides -->
                                 <div class="carousel-inner">
-                                    <div class="item active">
-                                        <a href=""><img src="assets/images/audio/{{audio.image2}}" alt="quanaudio.vn" width="85px" height="auto"></a>
-                                        <a href=""><img src="assets/images/audio/{{audio.image3}}" alt="quanaudio.vn" width="85px" height="auto"></a>
-                                        <a href=""><img src="assets/images/audio/{{audio.image4}}" alt="quanaudio.vn" width="85px" height="auto"></a>
-                                    </div>
-                                    <div class="item">
-                                        <a href=""><img src="assets/images/audio/{{audio.image3}}" alt="quanaudio.vn" width="85px" height="auto"></a>
-                                        <a href=""><img src="assets/images/audio/{{audio.image4}}" alt="quanaudio.vn" width="85px" height="auto"></a>
-                                        <a href=""><img src="assets/images/audio/{{audio.image2}}" alt="quanaudio.vn" width="85px" height="auto"></a>
-                                    </div>
-                                    <div class="item">
-                                        <a href=""><img src="assets/images/audio/{{audio.image4}}" alt="quanaudio.vn" width="85px" height="auto"></a>
-                                        <a href=""><img src="assets/images/audio/{{audio.image2}}" alt="quanaudio.vn" width="85px" height="auto"></a>
-                                        <a href=""><img src="assets/images/audio/{{audio.image3}}" alt="quanaudio.vn" width="85px" height="auto"></a>
-                                    </div>
-
+                                    <ng-container *ngFor="let image of audio.image; let idx = index">
+                                        <div class="item" [ngClass]="{'active': idx == 0}" *ngIf="idx % 3 == 0">
+                                            <a (click)="activeImage = idx" class="cursor-pointer"><img src="{{audio.image[idx]}}" alt="quanaudio.vn" width="85px" height="auto"></a>
+                                            <a (click)="activeImage = idx + 1" class="cursor-pointer" *ngIf="idx + 1 < audio.image.length"><img src="{{audio.image[idx + 1]}}" alt="quanaudio.vn" width="85px" height="auto"></a>
+                                            <a (click)="activeImage = idx + 2" class="cursor-pointer" *ngIf="idx + 2 < audio.image.length"><img src="{{audio.image[idx + 2]}}" alt="quanaudio.vn" width="85px" height="auto"></a>
+                                        </div>
+                                    </ng-container>
                                 </div>
 
                                 <!-- Controls -->
@@ -71,15 +68,16 @@
                                         Mua ngay
                                 </button>
                                 </span>
-                                <p><b>Số lượng trong kho:</b> Nhiều</p>
-                                <p><b>Điều kiện:</b> {{audio.condition}}</p>
+                                <p><b>Số lượng trong kho:</b> <i>Còn hàng</i></p>
                                 <p><b>Hãng:</b> {{audio.brand}}</p>
                                 <a href=""><img src="assets/images/product-details/share.png" class="share img-responsive" alt="" /></a>
+                                <div class="fb-like" data-share="true" data-width="450" data-show-faces="true">
+                                </div>
                             </div>
                             <!--/product-information-->
                         </div>
                         <div class="col-sm-12">
-                            <div class="product-information" [innerHTML]="audio.description">
+                            <div class="product-information" [innerHTML]="audio.description| safeHtml: audio.description">
                             </div>
                         </div>
                     </div>
@@ -279,7 +277,7 @@
                 </div> -->
                 <!--/category-tab-->
 
-                <!-- <app-recommen-product></app-recommen-product> -->
+                <app-recommen-product></app-recommen-product>
 
             </div>
         </div>

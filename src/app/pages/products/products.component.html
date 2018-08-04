@@ -50,6 +50,12 @@
                         <!--shipping-->
                         <img src="assets/images/home/shipping.jpg" alt="" />
                     </div>
+                    <div class="shipping text-center">
+                        <app-fb-page></app-fb-page>
+                    </div>
+                    <div class="shipping text-center">
+                        <iframe width="100%" height="auto" src="https://www.youtube.com/embed/JrdausxaitA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
                     <!--/shipping-->
 
                 </div>
@@ -59,20 +65,22 @@
                 <div class="features_items">
                     <!--features_items-->
                     <h2 class="title text-center">Sản phẩm</h2>
-                    <ng-container *ngFor="let audio of audios">
-                        <div class="col-sm-4">
+                    <ng-container *ngIf="audios">
+                        <div class="col-sm-4" *ngFor="let audio of audios">
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                     <div class="productinfo text-center">
-                                        <img src="assets/images/audio/{{audio.image}}" alt="{{audio.name}}" />
+                                        <img src="{{audio.image[0]}}" alt="{{audio.name}}" />
                                         <h2>{{audio.price | pricePipe: audio.price}} VNĐ</h2>
-                                        <p>{{audio.name}}</p>
-                                        <a class="btn btn-default add-to-cart" [routerLink]="['detail-page', audio.idaudio, audio.name| urlPipe: audio.name]"><i class="fa fa-hand-o-right"></i>Xem ngay</a>
+                                        <h4 class="product-sale vibrate">{{audio.sale}}</h4>
+                                        <h4>{{audio.name}}</h4>
+                                        <a class="btn btn-default add-to-cart" [routerLink]="['/detail-page', audio.idaudio, audio.name| urlPipe: audio.name]"><i class="fa fa-hand-o-right"></i>Xem ngay</a>
                                     </div>
                                     <div class="product-overlay">
                                         <div class="overlay-content">
                                             <h2>{{audio.price | pricePipe: audio.price}} VNĐ</h2>
-                                            <p>{{audio.name}}</p>
+                                            <h4 class="product-sale">{{audio.sale}}</h4>
+                                            <h4>{{audio.name}}</h4>
                                             <a (click)="addCart(audio.idaudio)" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Mua ngay</a>
                                         </div>
                                     </div>
@@ -87,7 +95,7 @@
                             </div>
                         </div>
                     </ng-container>
-                    <ng-container *ngIf="audios.length == 0">
+                    <ng-container *ngIf="!audios || (audios && audios.length == 0)">
                         <div class="col-sm-12">
                             <p class="text-center">Không có dữ liệu sản phẩm</p>
                         </div>

@@ -9,6 +9,7 @@ export const APP_CONSTANTS = {
     URL_GET_LATEST_NEWS : 'https://api.quanaudio.vn/get-latest-news',
     URL_GET_DETAIL_NEW : 'https://api.quanaudio.vn/get-detail-new',
     URL_GET_RANDOM_NEW : 'https://api.quanaudio.vn/get-random-new',
+    URL_GET_RANDOM_AUDIO : 'https://api.quanaudio.vn/get-random-audio',
     KEY_CART: 'CART',
     TIME_OUT: 3600000,
     APPEND_LOCALSTORAGE: 'APPEND_STORAGE',
@@ -17,6 +18,6 @@ export const APP_CONSTANTS = {
     SET_LOCALSTORAGE: 'RESET_STORAGE',
     TIN_TUC: 'TINTUC',
     CONG_TRINH_HOAN_THANH: 'CTHT',
-    URL_TIN_TUC: 'https://api.quanaudio.vn/tin-tuc',
+    URL_TIN_TUC: 'tin-tuc',
     PREFIX_URL_ADMIN: 'admin'
 }

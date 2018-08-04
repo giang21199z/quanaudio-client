@@ -4,9 +4,14 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordian" href="#category-{{category.id}}">
-                        <span *ngIf="category.listChild.length" class="badge pull-right"><i class="fa fa-plus"></i></span> {{category.name}}
+                    <a *ngIf="category.listChild.length; else directLink" data-toggle="collapse" data-parent="#accordian" href="#category-{{category.id}}">
+                        <span class="badge pull-right"><i class="fa fa-plus"></i></span> {{category.name}}
                     </a>
+                    <ng-template #directLink>
+                        <a [routerLink]="['/danh-sach-san-pham', category.id, category.name| urlPipe: category.name]">
+                            {{category.name}}
+                        </a>
+                    </ng-template>
                 </h4>
             </div>
             <ng-container *ngIf="category.listChild.length">

@@ -1,4 +1,18 @@
 .single-products:hover .product-overlay {
     display: block;
-    height: 50%;
+    height: 30%;
+}
+
+.product-sale {
+    color: red;
+    min-height: 20px;
+}
+
+.overlay-content .product-sale {
+    color: white;
+}
+
+.productinfo img {
+    width: 255px;
+    height: 360px;
 }

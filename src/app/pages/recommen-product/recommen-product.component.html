@@ -1,48 +1,26 @@
 <div class="recommended_items">
     <!--recommended_items-->
-    <h2 class="title text-center">Sản phẩm bán chạy</h2>
+    <h2 class="title text-center">Sản phẩm khác</h2>
 
     <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="item active">
-                <div class="col-sm-4">
-                    <div class="product-image-wrapper">
-                        <div class="single-products">
-                            <div class="productinfo text-center">
-                                <img src="assets/images/home/recommend1.jpg" alt="" />
-                                <h2>{{12000000 | pricePipe: 12000000}}</h2>
-                                <p>Loa chất</p>
-                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</button>
+                <ng-container *ngFor="let audio of audios">
+                    <div class="col-sm-4">
+                        <div class="product-image-wrapper">
+                            <div class="single-products">
+                                <div class="productinfo text-center">
+                                    <img src="{{audio.image[0]}}" alt="{{audio.name}}" />
+                                    <h2>{{audio.price | pricePipe: 12000000}} VNĐ</h2>
+                                    <p>{{audio.name}}</p>
+                                    <a [routerLink]="['/detail-page', audio.idaudio, audio.name| urlPipe: audio.name]" class="btn btn-default add-to-cart"><i class="fa fa-hand-o-right"></i>Chi tiết</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="product-image-wrapper">
-                        <div class="single-products">
-                            <div class="productinfo text-center">
-                                <img src="assets/images/home/recommend2.jpg" alt="" />
-                                <h2>{{12000000 | pricePipe: 12000000}}</h2>
-                                <p>Loa chất</p>
-                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="product-image-wrapper">
-                        <div class="single-products">
-                            <div class="productinfo text-center">
-                                <img src="assets/images/home/recommend3.jpg" alt="" />
-                                <h2>{{12000000 | pricePipe: 12000000}}</h2>
-                                <p>Loa chất</p>
-                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </ng-container>
             </div>
-            <div class="item">
+            <!-- <div class="item">
                 <div class="col-sm-4">
                     <div class="product-image-wrapper">
                         <div class="single-products">
@@ -79,14 +57,14 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
-        <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+        <!-- <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
             <i class="fa fa-angle-left"></i>
         </a>
         <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
             <i class="fa fa-angle-right"></i>
-        </a>
+        </a> -->
     </div>
 </div>
 <!--/recommended_items-->

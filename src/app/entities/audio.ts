@@ -6,7 +6,7 @@ export class Audio {
     private condition: string;
     private brand: string;
     private description: string;
-    private image: string;
+    private image: any;
     private image2: string;
     private image3: string;
     private image4: string;

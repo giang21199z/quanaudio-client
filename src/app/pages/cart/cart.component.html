@@ -22,7 +22,7 @@
                     <ng-container *ngFor="let cartItem of audios; let idx = index">
                         <tr>
                             <td class="cart_product">
-                                <a href=""><img src="assets/images/audio/{{cartItem.audio.image}}" alt=""></a>
+                                <a href=""><img src="{{cartItem.audio.image[0]}}" alt=""></a>
                             </td>
                             <td class="cart_description">
                                 <h4><a href="">{{cartItem.audio.name}}</a></h4>

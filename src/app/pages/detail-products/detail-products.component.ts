@@ -11,6 +11,7 @@ import { SnackbarService } from 'ngx-snackbar';
 })
 export class DetailProductsComponent implements OnInit {
     public audio: Audio;
+    public activeImage = 0;
     constructor(
         private activatedRoute: ActivatedRoute,
         private audioService: AudioService,

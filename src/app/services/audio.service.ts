@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 import { APP_CONSTANTS } from '../common/config/constants';
 import { Audio } from '../entities/audio';
@@ -13,8 +13,12 @@ constructor(private http:HttpClient) { }
     /**
      * get audio for home page
      */
-    getAllAudios(successCb, errorCb){
-        this.http.get(APP_CONSTANTS.URL_GET_AUDIO)
+    getAllAudios(requestParams, successCb, errorCb){
+        let param = new HttpParams();
+        param = param.append('limit', requestParams.limit);
+        this.http.get(APP_CONSTANTS.URL_GET_AUDIO, {
+            params: param
+        })
         .subscribe(data => {
             successCb(this.mappingData(data))
         }, error => errorCb);
@@ -30,8 +34,23 @@ constructor(private http:HttpClient) { }
         }, error => errorCb);
     }
 
+    /**
+     * get random audio
+     */
+    getRandomAudio(idaudio, successCb, errorCb){
+        this.http.get(APP_CONSTANTS.URL_GET_RANDOM_AUDIO + '/' + idaudio)
+        .subscribe(data => {
+            successCb(this.mappingData(data))
+        }, error => errorCb);
+    }
+
     mappingData(datas): any{
-        return datas;
+        let result = [];
+        for(const data of datas){
+            data.image = JSON.parse(data.image);
+            result.push(data);
+        }
+        return result;
     }
 
     /**
@@ -54,7 +73,7 @@ constructor(private http:HttpClient) { }
             const condition = item.condition;
             const brand = item.brand;
             const description = item.description;
-            const image = item.image;
+            const image = JSON.parse(item.image);
             const image2 = data.image2;
             const image3 = data.image3;
             const image4 = data.image4;
@@ -89,7 +108,7 @@ constructor(private http:HttpClient) { }
         const condition = data.condition;
         const brand = data.brand;
         const description = data.description;
-        const image = data.image;
+        const image = JSON.parse(data.image);
         const image2 = data.image2;
         const image3 = data.image3;
         const image4 = data.image4;

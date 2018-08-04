@@ -27,6 +27,7 @@ import { LoaderService } from './common/loader/loader.service';
 
 import { PricePipe } from './pipes/price.pipes';
 import { UrlPipe } from './pipes/url.pipes';
+import { TitlePipe } from './pipes/title.pipes';
 import { RecommenProductComponent } from './pages/recommen-product/recommen-product.component';
 import { UserInforComponent } from './pages/user-infor/user-infor.component';
 import { LoaderComponent } from './common/loader/loader.component';
@@ -34,7 +35,9 @@ import { PendingOrderComponent } from './pages/pending-order/pending-order.compo
 import { NewsService } from './services/news.service';
 import { PaginationComponent } from './common/pagination/pagination.component';
 import { ProductsComponent } from './pages/products/products.component';
-
+import { SafeHtmlPipe } from './pipes/safe-html.pipe';
+import { FbPageComponent } from './common/fb-page/fb-page.component';
+import { CallMeComponent } from './common/call-me/call-me.component';
 const appRoutes: Routes = [
     { path: '', redirectTo: '/trang-chu', pathMatch: 'full'},
     { path: 'trang-chu', component: HomeComponent },
@@ -60,13 +63,16 @@ const appRoutes: Routes = [
         DetailNewsComponent,
         CategoryComponent,
         SlideComponent,
-        PricePipe, UrlPipe,
+        PricePipe, UrlPipe, TitlePipe,
         RecommenProductComponent,
         UserInforComponent,
         LoaderComponent,
         PendingOrderComponent,
         PaginationComponent,
-        ProductsComponent
+        ProductsComponent,
+        SafeHtmlPipe,
+        FbPageComponent,
+        CallMeComponent
     ],
     imports: [
         BrowserModule,

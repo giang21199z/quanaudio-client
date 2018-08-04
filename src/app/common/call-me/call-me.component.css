@@ -1,0 +1,19 @@
+.call-me-container {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    cursor: pointer;
+}
+
+.call-me-container img {
+    width: 100px;
+    position: absolute;
+    right: 0;
+}
+
+.call-me-container div {
+    color: #FE980F;
+    font-weight: bold;
+    font-size: 20px;
+    animation: shake 3s cubic-bezier(.36, .07, .19, .97) both infinite;
+}

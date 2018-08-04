@@ -7,6 +7,12 @@
                         <!--shipping-->
                         <img src="assets/images/home/shipping.jpg" alt="" />
                     </div>
+                    <div class="shipping text-center">
+                        <app-fb-page></app-fb-page>
+                    </div>
+                    <div class="shipping text-center">
+                        <iframe width="100%" height="auto" src="https://www.youtube.com/embed/JrdausxaitA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
                     <!--/shipping-->
                 </div>
             </div>
@@ -31,7 +37,7 @@
                                 </span>
                             </div>
                             <a [routerLink]="['/detail-news', item.idnews, item.title| urlPipe: item.title]">
-                                <img src="assets/images/news/{{item.image}}" alt="quanaudio.vn">
+                                <img src="{{item.image}}" alt="quanaudio.vn">
                             </a>
                             <p [innerHTML]="item.description"></p>
                             <a class="btn btn-primary" [routerLink]="['/detail-news', item.idnews, item.title| urlPipe: item.title]">Xem thêm</a>
